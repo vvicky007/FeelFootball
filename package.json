@@ -7,10 +7,11 @@
   "license": "MIT",
   "scripts": {
     "dev": "set NODE_PATH=./lib&& nodemon --exec babel-node lib/server.js",
-    "webpack": "webpack -w",
+    "webpack": "webpack --mode=production",
     "test": "jest --watchAll",
-    "start":"set NODE_PATH=./lib&& nodemon --exec babel-node lib/server.js",
-    "prestart": "webpack"
+    "build":"babel lib -d build --copy-files",
+    "prestart":"npm run build && npm run webpack",
+    "start":"set NODE_PATH=./lib&& nodemon --exec build/server.js"
   },
   "babel": {
     "presets": [
