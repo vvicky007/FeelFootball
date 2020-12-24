@@ -9,7 +9,8 @@
     "dev": "set NODE_PATH=./lib&& nodemon --exec babel-node lib/server.js",
     "webpack": "webpack -w",
     "test": "jest --watchAll",
-    "start":"set NODE_PATH=./lib&& nodemon --exec babel-node lib/server.js"
+    "start":"set NODE_PATH=./lib&& nodemon --exec babel-node lib/server.js",
+    "prestart": "webpack"
   },
   "babel": {
     "presets": [
