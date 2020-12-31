@@ -1,7 +1,7 @@
 {
-  "name": "react_advanced_me",
+  "name": "Feel-Football",
   "version": "1.0.0",
-  "description": "Advanced React",
+  "description": "Full Stack application (MERN)",
   "main": "lib/server.js",
   "author": "Vineeth",
   "license": "MIT",
@@ -9,29 +9,44 @@
     "dev": "set NODE_PATH=./lib&& nodemon --exec babel-node lib/server.js",
     "webpack": "webpack --mode=production",
     "test": "jest --watchAll",
-    "build":"babel lib -d build --copy-files",
-    "prestart":"npm run build && npm run webpack",
-    "start":"set NODE_PATH=./build && node build/server.js"
+    "build": "babel lib -d build --copy-files",
+    "prestart": " npm run build && npm run initialize-db && npm run webpack",
+    "start": "set NODE_PATH=./build && node build/server.js",
+    "initialize-db": "node ./build/db/initialize-db"
   },
   "babel": {
     "presets": [
-      "@babel/preset-env",
+      [
+        "@babel/preset-env",
+        {
+          "targets": {
+            "node": "10"
+          }
+        }
+      ],
       "@babel/preset-react"
     ]
   },
   "dependencies": {
+    "@babel/preset-env": "^7.12.10",
     "@babel/cli": "^7.0.0",
     "@babel/core": "^7.0.0",
-    "@babel/polyfill": "^7.12.1",
-    "@babel/preset-env": "^7.12.10",
     "@babel/preset-react": "^7.12.10",
     "babel-loader": "^8.2.2",
+    "@babel/polyfill": "^7.12.1",
+    "body-parser": "^1.19.0",
     "bootstrap": "^4.5.3",
+    "cookie-parser": "^1.4.5",
     "css-loader": "^5.0.1",
     "ejs": "^3.1.5",
     "express": "^4.17.1",
+    "express-session": "^1.17.1",
     "jquery": "^3.5.1",
+    "md5": "^2.3.0",
+    "mongodb": "^3.6.3",
     "nodemon": "^2.0.6",
+    "passport": "^0.4.1",
+    "passport-local": "^1.0.0",
     "pm2": "^4.5.0",
     "popper.js": "^1.16.1",
     "react": "^17.0.1",
@@ -41,9 +56,10 @@
     "react-router-dom": "^5.2.0",
     "react-toast-notifications": "^2.4.0",
     "redux": "^4.0.5",
-    "redux-thunk": "^2.3.0",
     "redux-immutable-state-invariant": "^2.1.0",
+    "redux-thunk": "^2.3.0",
     "style-loader": "^2.0.0",
+    "uuid": "^8.3.2",
     "webpack": "^5.10.1",
     "webpack-cli": "^4.2.0"
   },
@@ -52,6 +68,7 @@
     "eslint": "^7.15.0",
     "eslint-plugin-react": "^7.21.5",
     "jest": "^26.6.3",
+    "react-addons-perf": "^15.4.2",
     "react-test-renderer": "^17.0.1",
     "svg-url-loader": "^7.1.1"
   }
