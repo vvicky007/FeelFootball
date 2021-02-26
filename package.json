@@ -7,7 +7,7 @@
   "license": "MIT",
   "scripts": {
     "dev": "set NODE_PATH=./lib&& nodemon --exec babel-node lib/server.js",
-    "webpack": "webpack --mode=production",
+    "webpack": "webpack",
     "test": "jest --watchAll",
     "build": "babel lib -d build --copy-files",
     "prestart": " npm run build && npm run initialize-db && npm run webpack",
