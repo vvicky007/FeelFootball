@@ -2,7 +2,7 @@
   "name": "Feel-Football",
   "version": "1.0.0",
   "description": "Full Stack application (MERN)",
-  "main": "lib/server.js",
+  "main": "./build/server.js",
   "author": "Vineeth",
   "license": "MIT",
   "scripts": {
