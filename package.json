@@ -64,7 +64,7 @@
     "webpack-cli": "^4.2.0",
     "core-js": "^2.6.12",
     "serverless-http": "^2.7.0",
-     "netlify-lambda": "^2.0.15",
+     "netlify-lambda": "^2.0.15"
   },
   "devDependencies": {
     "@babel/node": "^7.0.0",
